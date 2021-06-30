@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+ .alert-dismissible {
+  margin-bottom: 0;
+}
+
+body {
+  background-image:
+    repeating-radial-gradient(rgba(152, 241, 227, 0.8), rgba(182, 237, 224, 0.8)),
+    url(https://blog.prezi.com/wp-content/uploads/2019/03/jason-leung-479251-unsplash.jpg);
+  height: 900px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  backface-visibility: initial;
+  background-position: center;
+  background-attachment: fixed;
+}
