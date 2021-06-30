@@ -1,0 +1,49 @@
+<h1><%= @user.name %></h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <h3 class="mb-3 text-center">Hosted: <%= pluralize( @user.events.count ,"event") %></h3>
+        <ul>
+        <% if @user.events.empty? %>
+        <li>User is not hosting</li>
+        <hr>
+        <% else %>
+                <% @user.events.each do |event| %>
+                    <li class=""><%=link_to event.name, event_path(event) %></li>
+                    <hr>
+                <% end %>
+        <% end %>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <h3 class="mb-3 text-center">Upcoming: <%= pluralize( @user.attended_events.where('date >= ?', Date.today).count ,"event") %></h3>
+        <ul>
+        <% if @user.attended_events.where('date >= ?', Date.today).count.zero? %>
+        <li>No planned parties</li>
+        <hr>
+        <% else %>
+                <% @user.attended_events.where('date >= ?', Date.today).each do |event| %>
+                    <li class=""><%=link_to event.name, event_path(event) %></li>
+                    <hr>
+                <% end %>
+        <% end %>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <h3 class="mb-3 text-center">Attended: <%= pluralize( @user.attended_events.where('date < ?', Date.today).count ,"event") %></h3>
+        <ul>
+        <% if @user.attended_events.where('date < ?', Date.today).count.zero? %>
+        <li>User did not attended any parties</li>
+        <hr>
+        <% else %>
+                <% @user.attended_events.where('date < ?', Date.today).each do |event| %>
+                    <li class=""><%=link_to event.name, event_path(event) %></li>
+                    <hr>
+                <% end %>
+        <% end %>
+        </ul>
+    </div>
+
+</div>

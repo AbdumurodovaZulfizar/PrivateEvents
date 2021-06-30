@@ -1,4 +1,48 @@
-<p id="notice"><%= notice %></p>
+<div class='row'>
+<h2 class='text-center'> Upcoming Events </h2>
+<% @upcoming_events.each do |event| %>
+
+<div class="card text-center col-12 col-md-4 m-2">
+  <div class="card-header">
+    <h5 class=""><%= event.creator.name %> </h5>
+  </div>
+  <div class="card-body">
+   <h5 class="card-title"><%= event.name %></h5>
+    <p class="card-text"><%= event.description %></p>
+  </div>
+  <div class="card-footer text-muted">
+    <%= event.date %>
+  </div>
+</div>
+  <% end %>
+</div>
+
+<div class='row'>
+<h2 class='text-center'> Past Events </h2>
+<% @past_events.each do |event| %>
+
+<div class="card text-center col-12 col-md-4 m-2">
+  <div class="card-header">
+    <h5 class=""><%= event.creator.name %> </h5>
+  </div>
+  <div class="card-body">
+   <h5 class="card-title"><%= event.name %></h5>
+    <p class="card-text"><%= event.description %></p>
+  </div>
+  <div class="card-footer text-muted">
+    <%= event.date %>
+  </div>
+</div>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+<%# <p id="notice"><%= notice %></p>
 
 <h1>Events</h1>
 
@@ -32,4 +76,4 @@
 
 <%= link_to 'New Event', new_event_path %>
 
-
+ %>

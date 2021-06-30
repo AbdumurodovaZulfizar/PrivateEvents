@@ -6,4 +6,8 @@ module EventsHelper
     end
     out.html_safe
   end
+
+  def profile_btn
+    return render partial: 'events/profile' if user_signed_in?
+  end
 end
