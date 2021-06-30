@@ -1,8 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
   private
 
-  def show
-    @user = User.find(params[:id])
+  def index
+    @user = User.all
   end
 
   def sign_up_params
