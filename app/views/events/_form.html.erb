@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="field col-12 col-md-6">
+    <%= form.label :name, class:'form-label' %>
+    <%= form.text_field :name, class:'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
+  <div class="field col-12 col-md-6 my-2">
+    <%= form.label :date, class:'form-label' %>
+    <%= form.date_select :date, class:'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
+  <div class="field col-12 col-md-6">
+    <%= form.label :location, class:'form-label' %>
+    <%= form.text_field :location, class:'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="field col-12 col-md-6">
+    <%= form.label :description, class:'form-label' %>
+    <%= form.text_area :description, class:'form-control' %>
   </div>
 
-  <div class="actions">
+  <div class='btn btn-light my-2'>
     <%= form.submit %>
   </div>
 <% end %>
