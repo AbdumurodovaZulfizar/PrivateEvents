@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
 
-<p>
+<% if @event.creator == current_user %>
+  <p>
   <strong>Name:</strong>
   <%= @event.name %>
 </p>
@@ -20,5 +20,29 @@
   <%= @event.description %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+
+<%= link_to 'Edit', edit_event_path(@event) %>
+<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<% else %>
+  <p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @event.location %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+<% end %>
+
