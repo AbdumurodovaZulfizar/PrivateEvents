@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   match '/users',   to: 'users#index',   via: 'get'
-  devise_for :users, :controllers => { registrations: "registrations"}
+  devise_for :users, :controllers => { registrations: "registrations"} do
+    resources :events
+  end
   resources :events
   root to: 'events#index'
   

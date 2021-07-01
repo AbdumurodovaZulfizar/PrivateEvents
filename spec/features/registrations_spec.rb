@@ -21,7 +21,7 @@ RSpec.describe 'Registrations', type: :feature do
     visit new_user_session_path
     fill_in 'email', with: @user.name
     fill_in 'password', with: @user.password
-    click_button 'Log in'
+    click_button 'login'
 
     expect(page).to have_text('Personal Events')
   end

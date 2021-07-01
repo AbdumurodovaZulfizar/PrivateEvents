@@ -4,6 +4,7 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
+    # @user = User.find params[:user_id]
     @events = Event.all.order('date DESC')
     @past_events = @events.past
     @upcoming_events = @events.upcoming

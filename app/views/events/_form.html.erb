@@ -13,25 +13,25 @@
 
   <div class="field col-12 col-md-6">
     <%= form.label :name, class:'form-label' %>
-    <%= form.text_field :name, class:'form-control' %>
+    <%= form.text_field :name, class:'form-control', id:'event_name' %>
   </div>
 
   <div class="field col-12 col-md-6 my-2">
     <%= form.label :date, class:'form-label' %>
-    <%= form.date_select :date, class:'form-control' %>
+    <%= form.date_select :date, class:'form-control', id: 'date' %>
   </div>
 
   <div class="field col-12 col-md-6">
     <%= form.label :location, class:'form-label' %>
-    <%= form.text_field :location, class:'form-control' %>
+    <%= form.text_field :location, class:'form-control', id:'location' %>
   </div>
 
   <div class="field col-12 col-md-6">
     <%= form.label :description, class:'form-label' %>
-    <%= form.text_area :description, class:'form-control' %>
+    <%= form.text_area :description, class:'form-control', id:'description' %>
   </div>
 
   <div class='btn btn-light my-2'>
-    <%= form.submit %>
+    <%= form.submit, id:'new_event' %>
   </div>
 <% end %>
