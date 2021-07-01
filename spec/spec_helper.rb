@@ -20,5 +20,6 @@ RSpec.configure do |config|
 
   Kernel.srand config.seed
   end
+  require 'capybara/rspec'
 
   # require 'support/shoulda_matchers'
