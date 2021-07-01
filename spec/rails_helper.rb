@@ -67,8 +67,9 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 end
 
-require 'mongoid-rspec'
-
-RSpec.configure do |config|
-  config.include Mongoid::Matchers, type: :model
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
 end
