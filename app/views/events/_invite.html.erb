@@ -3,8 +3,8 @@
 <% else %>
     <% enrollment = current_user.enrollments.find_by(event_id: @event.id) %>
     <% if  enrollment %>
-       <%= button_to  'Cancel', enrollment_path(id: enrollment.id, event_id: @event.id, user_id: current_user.id), method: :delete, class:"btn btn-danger btn-lg" %>
+       <%= button_to  'Cancel', enrollment_path(id: enrollment.id, event_id: @event.id, user_id: current_user.id), method: :delete, class:"btn btn-danger" %>
     <% else %>
-       <%= button_to  'Enroll', enrollment_path(event_id: @event.id), method: :patch, class:"btn btn-primary btn-lg" %>
+       <%= button_to  'Enroll', enrollment_path(event_id: @event.id), method: :patch, class:"btn btn-dark" %>
     <% end %>
 <% end %>

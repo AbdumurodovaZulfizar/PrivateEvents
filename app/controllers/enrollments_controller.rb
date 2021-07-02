@@ -1,4 +1,5 @@
-class EnrollmentController < ApplicationController
+class EnrollmentsController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create]
   def create
     event = Event.find(params[:event_id])
     enrollment = Enrollment.new(event_id: event.id, user_id: params[:user_id])
@@ -25,5 +26,18 @@ class EnrollmentController < ApplicationController
     end
 
     redirect_to root_path
+  end
+
+  def update
+    @event = Event.find(params[:event_id])
+    @enrollment = Enrollment.find_by(event_id: params[:event_id], user_id: current_user.id)
+    if @enrollment && @enrollment.invited?
+      @enrollment.accepted!
+      flash[:notice] = "Thank you for signing up for the '#{@event.name}'!"
+    else
+      flash[:alert] = 'Your name is not on the invitation list'
+    end
+
+    redirect_to event_path(@event)
   end
 end

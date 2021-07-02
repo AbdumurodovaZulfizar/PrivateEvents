@@ -1,21 +1,54 @@
-
-<% if @event.creator == current_user %>
-  <div class="row">
+<div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="card border text-center px-3">
 
       <div class="card-header">
-      <div class="wrap_card">
-        <div class="w-100">
-          <%= render 'events/invites' %>
-          <%= render 'events/accepted' %>
-        </div>
-        <div>
+        <div class="wrap_card">
+          <div class="w-100">
+            <%= render 'events/invites' %>
+            <%= render 'events/accepted' %>
+          </div>
+          <div>
             <h1> <%= @event.name %></h1>
             <hr>
-        </div>
 
-      </div>
+                  <button class="btn btn-dark" aria-haspopup="true" aria-controls="dropdown-menu3">
+                    <span>Invitees: <%= User.find(@event.enrollments.invited.map { |enr| enr.user_id }).count %></span>
+                  </button>
+
+                    <ul>
+                      <% if User.find(@event.enrollments.invited.map { |enr| enr.user_id }).any? %>
+                      <div class="dropdown-item">
+                        <% User.find(@event.enrollments.invited.map { |enr| enr.user_id }).each do |user| %>
+                        <li>
+                          <p><%= user.name %></p>
+                        </li>
+                        <% end %>
+                      </div>
+                      <% end %>
+                    </ul>
+
+
+                  <button class="btn btn-dark" aria-haspopup="true" aria-controls="dropdown-menu3">
+                    <span>Attendies:
+                      <%= User.find(@event.enrollments.accepted.map { |enr| enr.user_id }).count %></span>
+                  </button>
+
+
+                    <ul>
+                      <% if User.find(@event.enrollments.accepted.map { |enr| enr.user_id }).any? %>
+                      <div class="dropdown-item">
+                        <% User.find(@event.enrollments.accepted.map { |enr| enr.user_id }).each do |user| %>
+                        <li>
+                          <p><%= user.name %></p>
+                        </li>
+                        <% end %>
+                      </div>
+                      <% end %>
+                    </ul>
+</div>
+
+
       <div class="card-body">
 
         <p class="card-text"><%= @event.description %> </p>
@@ -25,35 +58,10 @@
         <hr>
       </div>
       <div class="card-footer text-muted">
-      <p class='text-center'> date <%= @event.date %></p>
+        <p class='text-center'> date <%= @event.date %></p>
       </div>
     </div>
   </div>
 </div>
 
-
-<%= link_to 'Edit', edit_event_path(@event), class:'text-dark' %>
-<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' }, class:'text-dark' %>
-
-<% else %>
-  <p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-<% end %>
-
+<% render 'events/link' %>
