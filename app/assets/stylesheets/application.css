@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- .alert-dismissible {
+.alert-dismissible {
   margin-bottom: 0;
 }
 
@@ -41,4 +41,3 @@ header {
   background-position: center;
   background-attachment: fixed;
 }
-
