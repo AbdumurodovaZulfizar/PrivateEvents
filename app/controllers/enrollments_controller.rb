@@ -31,7 +31,7 @@ class EnrollmentsController < ApplicationController
   def update
     @event = Event.find(params[:event_id])
     @enrollment = Enrollment.find_by(event_id: params[:event_id], user_id: current_user.id)
-    if @enrollment && @enrollment.invited?
+    if @enrollment&.invited?
       @enrollment.accepted!
       flash[:notice] = "Thank you for signing up for the '#{@event.name}'!"
     else
