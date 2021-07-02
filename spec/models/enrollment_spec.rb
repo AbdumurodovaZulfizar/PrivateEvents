@@ -1,3 +1,4 @@
+# rubocop:disable Layout/EndOfLine
 require 'rails_helper'
 
 RSpec.describe Enrollment, type: :model do
@@ -9,3 +10,4 @@ RSpec.describe Enrollment, type: :model do
     it { is_expected.to belong_to(:event) }
   end
 end
+# rubocop:enable Layout/EndOfLine

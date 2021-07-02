@@ -1,3 +1,4 @@
+# rubocop:disable Layout/EndOfLine
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
@@ -15,3 +16,4 @@ RSpec.describe Event, type: :model do
     it { is_expected.to validate_presence_of(:date) }
   end
 end
+# rubocop:enable Layout/EndOfLine
