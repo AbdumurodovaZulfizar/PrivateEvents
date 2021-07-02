@@ -1,4 +1,3 @@
-# rubocop:disable Layout/LineLength, Layout/EndOfLine
 module EventsHelper
   def create_event_btn
     out = ''
@@ -10,4 +9,3 @@ module EventsHelper
     return render partial: 'events/profile' if user_signed_in?
   end
 end
-# rubocop:enable Layout/LineLength, Layout/EndOfLine
