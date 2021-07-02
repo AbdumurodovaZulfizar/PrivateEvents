@@ -38,6 +38,7 @@ class EventsController < ApplicationController
     end
   end
   # DELETE /events/1 or /events/1.json
+
   def destroy
     @event.destroy
     respond_to do |format|

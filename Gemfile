@@ -37,8 +37,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
-  gem 'webdrivers'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'webdrivers'
 
   # The following gems aids with the nuts and bolts
   # of interacting with the browser.
