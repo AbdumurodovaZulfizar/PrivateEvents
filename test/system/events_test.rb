@@ -14,7 +14,7 @@ class EventsTest < ApplicationSystemTestCase
     visit events_url
     click_on 'New Event'
 
-    fill_in "Date", with: @event.date
+    fill_in 'Date', with: @event.date
     fill_in 'Description', with: @event.description
     fill_in 'Location', with: @event.location
     fill_in 'Name', with: @event.name

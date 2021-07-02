@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[new create]
@@ -59,3 +60,4 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :date, :location, :description)
   end
 end
+# rubocop:enable Layout/LineLength
