@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 require 'test_helper'
 
 class EventsControllerTest < ActionDispatch::IntegrationTest
@@ -46,3 +47,4 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to events_url
   end
 end
+# rubocop:enable Layout/LineLength
