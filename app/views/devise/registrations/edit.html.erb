@@ -24,7 +24,7 @@
         <hr>
         <% else %>
                 <% @user.attended_events.where('date >= ?', Date.today).each do |event| %>
-                    <li class=""><%=link_to event.name, event_path(event) %></li>
+                    <li class=""><%=link_to event.name, event_path(event), class:'text-dark' %></li>
                     <hr>
                 <% end %>
         <% end %>
