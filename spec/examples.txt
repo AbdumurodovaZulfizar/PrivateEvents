@@ -1,0 +1,14 @@
+example_id                                      | status | run_time        |
+----------------------------------------------- | ------ | --------------- |
+./spec/features/events_managment_spec.rb[1:1:1] | passed | 10.75 seconds   |
+./spec/features/registrations_spec.rb[1:1]      | passed | 0.06286 seconds |
+./spec/features/registrations_spec.rb[1:2]      | passed | 0.34975 seconds |
+./spec/models/enrollment_spec.rb[1:1:1]         | passed | 0.00746 seconds |
+./spec/models/enrollment_spec.rb[1:1:2]         | passed | 0.00055 seconds |
+./spec/models/events_spec.rb[1:1:1]             | passed | 0.00059 seconds |
+./spec/models/events_spec.rb[1:1:2]             | passed | 0.0008 seconds  |
+./spec/models/events_spec.rb[1:2:1]             | passed | 0.00894 seconds |
+./spec/models/events_spec.rb[1:2:2]             | passed | 0.00144 seconds |
+./spec/models/user_spec.rb[1:1:1]               | passed | 0.00112 seconds |
+./spec/models/user_spec.rb[1:1:2]               | passed | 0.00067 seconds |
+./spec/models/user_spec.rb[1:2:1]               | passed | 0.00205 seconds |

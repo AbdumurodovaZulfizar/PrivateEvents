@@ -1,0 +1,35 @@
+<div class='row justify-content-between'>
+<h2 class='text-center'> Upcoming Events </h2>
+<% @upcoming_events.each do |event| %>
+
+<div class="card text-center col-12 col-md-3">
+  <div class="card-header">
+    <h5 class=""><%= event.name %> </h5>
+  </div>
+  <div class="card-body">
+    <%= link_to 'MORE', event, class:"btn btn-dark" %>
+  </div>
+  <div class="card-footer text-muted">
+    <p>  <%= event.date %> </p>
+  </div>
+</div>
+  <% end %>
+</div>
+
+<div class='row justify-content-between'>
+<h2 class='text-center'> Past Events </h2>
+<% @past_events.each do |event| %>
+
+<div class="card text-center col-12 col-md-3">
+  <div class="card-header">
+    <h5 class=""><%= event.name %> </h5>
+  </div>
+  <div class="card-body">
+    <%= link_to 'MORE', event, class:"btn btn-dark" %>
+  </div>
+  <div class="card-footer text-muted">
+    <p> <%= event.date %> </p>
+  </div>
+</div>
+  <% end %>
+</div>
