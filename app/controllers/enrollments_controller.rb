@@ -22,7 +22,7 @@ class EnrollmentsController < ApplicationController
       flash[:success] = 'Invitation removed'
     else
       enrollment.invited!
-      flash[:alert] = 'Something went wrong...'
+      flash[:alert] = 'Enrollment cancelled!'
     end
 
     redirect_to root_path
